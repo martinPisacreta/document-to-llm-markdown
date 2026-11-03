@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "document-to-llm-markdown",
+  "title": "Document to LLM Markdown",
+  "description": "Convert public HTTPS HTML pages and text-based PDFs into Markdown or plain text with explicit truncation metadata.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "usesStandbyMode": false,
+  "defaultMemoryMbytes": 512,
+  "minMemoryMbytes": 512,
+  "maxMemoryMbytes": 1024,
+  "readme": "../README.md",
+  "input": "./input_schema.json"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "document-to-llm-markdown",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Apify Actor: convert public HTTPS HTML pages and text-based PDFs into Markdown or plain text for LLMs.",
+  "license": "MIT",
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0"
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@mozilla/readability": "0.6.0",
+    "apify": "3.7.2",
+    "ipaddr.js": "2.5.0",
+    "jsdom": "30.1.3",
+    "pdfjs-dist": "6.5.438",
+    "turndown": "7.2.4"
+  }
+}

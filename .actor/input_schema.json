@@ -1,0 +1,38 @@
+{
+  "title": "Document to LLM Markdown input",
+  "description": "Provide url for one document or urls for a batch. Public HTTPS destinations on port 443 only.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "url": {
+      "title": "Single document URL",
+      "type": "string",
+      "description": "A public HTTPS HTML or PDF URL. Use this field or the batch field.",
+      "editor": "textfield"
+    },
+    "urls": {
+      "title": "Document URLs",
+      "type": "array",
+      "description": "Up to 50 public HTTPS URLs. Duplicate URLs are processed once per run.",
+      "editor": "stringList",
+      "items": { "type": "string" }
+    },
+    "format": {
+      "title": "Output format",
+      "type": "string",
+      "description": "HTML supports Markdown structure or plain text. PDF output preserves extracted text by page without reconstructing document layout.",
+      "editor": "select",
+      "enum": ["markdown", "text"],
+      "default": "markdown"
+    },
+    "maxChars": {
+      "title": "Maximum content characters per document",
+      "type": "integer",
+      "description": "Unicode code-point budget shared across all PDF pages; excludes title and metadata. Truncating output does not reduce the number of PDF pages processed or billed.",
+      "editor": "number",
+      "minimum": 1,
+      "maximum": 200000,
+      "default": 20000
+    }
+  }
+}

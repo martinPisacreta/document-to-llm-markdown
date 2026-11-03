@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Document extraction guide</title></head>
+<body>
+<nav>MENU_SENTINEL <a href="/login">Sign in</a></nav>
+<main><article>
+<h1>Document extraction guide</h1>
+<p>Reliable document extraction preserves useful information while removing navigation and executable page elements. This sample article provides enough ordinary prose for article detection without contacting any external service. Its paragraphs, heading and list should remain readable in both plain text and Markdown output.</p>
+<p>A conversion result should identify its source and explain any content limits. Character counts describe the extracted document rather than the original HTML markup. When a document exceeds its configured budget, the output should clearly report truncation so readers can distinguish missing content from an empty source.</p>
+<h2>Practical steps</h2>
+<ul><li>Read the source document.</li><li>Review the extracted content.</li></ul>
+<p>See the <a href="/guide">complete guide</a> for context. A <a href="javascript:alert(1)">dangerous link</a> must retain its readable label without an executable destination.</p>
+<pre><code>const answer = 42;
+  console.log(answer);</code></pre>
+<script>globalThis.EXECUTION_SENTINEL = true;</script>
+</article></main>
+<footer>FOOTER_SENTINEL</footer>
+</body></html>
