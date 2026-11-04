@@ -10,5 +10,6 @@
   "minMemoryMbytes": 512,
   "maxMemoryMbytes": 1024,
   "readme": "../README.md",
-  "input": "./input_schema.json"
+  "input": "./input_schema.json",
+  "output": "./output_schema.json"
 }

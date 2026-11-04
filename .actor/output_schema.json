@@ -1,0 +1,12 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Document to LLM Markdown output",
+  "description": "One dataset item per requested URL: extracted Markdown or plain text with title, character counts, truncation status and warnings. PDF items contain per-page content.",
+  "properties": {
+    "documents": {
+      "title": "Documents",
+      "description": "Extraction results in the default dataset.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}
