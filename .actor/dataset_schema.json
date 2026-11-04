@@ -1,0 +1,44 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "url": { "type": "string", "description": "Requested document URL." },
+      "finalUrl": { "type": "string", "description": "URL after redirects." },
+      "status": { "type": "string", "enum": ["success", "error"], "description": "Extraction result for this URL." },
+      "error": { "type": "string", "description": "Present only on error items." },
+      "documentType": { "type": "string", "enum": ["html", "pdf"], "description": "Detected document type." },
+      "format": { "type": "string", "enum": ["markdown", "text"], "description": "Requested output format." },
+      "title": { "type": "string", "description": "Page or PDF title, when available." },
+      "content": { "type": "string", "description": "Extracted content for HTML items." },
+      "fullTextCharacters": { "type": "integer", "description": "Characters extracted before the budget was applied." },
+      "outputCharacters": { "type": "integer", "description": "Characters returned after the budget was applied." },
+      "textTruncated": { "type": "boolean", "description": "True when content was cut to maxChars." },
+      "warnings": { "type": "array", "items": { "type": "string" } },
+      "pageCount": { "type": "integer", "description": "Number of pages for PDF items." },
+      "pages": {
+        "type": "array",
+        "description": "Per-page content for PDF items.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "pageNumber": { "type": "integer" },
+            "content": { "type": "string" },
+            "fullTextCharacters": { "type": "integer" },
+            "outputCharacters": { "type": "integer" },
+            "textTruncated": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": ["url", "status", "documentType", "title", "outputCharacters", "textTruncated", "pageCount", "content", "warnings", "error"]
+      },
+      "display": { "component": "table" }
+    }
+  }
+}
