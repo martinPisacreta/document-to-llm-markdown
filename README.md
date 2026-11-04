@@ -1,5 +1,7 @@
 # Document to LLM Markdown
 
+Run it on Apify Store: https://apify.com/textokit/document-to-llm-markdown
+
 Convert public HTTPS articles, documentation pages and text-based PDFs into Markdown or plain text for LLM workflows. Get extracted content, source URLs, character counts and explicit truncation warnings in the default Apify dataset.
 
 Useful for developers building retrieval pipelines, research assistants, document indexing and summarization workflows. No external LLM API or API key is required.
