@@ -8,21 +8,27 @@
       "title": "Single document URL",
       "type": "string",
       "description": "A public HTTPS HTML or PDF URL. Use this field or the batch field.",
-      "editor": "textfield"
+      "editor": "textfield",
+      "prefill": "https://example.com/"
     },
     "urls": {
       "title": "Document URLs",
       "type": "array",
       "description": "Up to 50 public HTTPS URLs. Duplicate URLs are processed once per run.",
       "editor": "stringList",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
     "format": {
       "title": "Output format",
       "type": "string",
       "description": "HTML supports Markdown structure or plain text. PDF output preserves extracted text by page without reconstructing document layout.",
       "editor": "select",
-      "enum": ["markdown", "text"],
+      "enum": [
+        "markdown",
+        "text"
+      ],
       "default": "markdown"
     },
     "maxChars": {
